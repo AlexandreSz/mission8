@@ -1,0 +1,21 @@
+#menu {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+#menu,
+li {
+    margin-right: 1em;
+    margin-left: 1em;
+}
+
+header {
+    background-color: #F3F3F3;
+}
+
+header,
+.navbar {
+    background-color: #F3F3F3;
+}

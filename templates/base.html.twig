@@ -4,9 +4,70 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
+            <!--FontAwesone-->
+            <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+            <!--Bootstrap-->
+            <!-- CSS only -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+            <!--CSS personnel-->
+            <link rel="stylesheet" href="{{ asset('css/styles.css')}}">
     </head>
     <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="{{path('app_home')}}"><img src="/media/unnamed.png" width="100" height="100" alt=""></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0" id="menu">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{path('app_home')}}">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Entrée</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Plats</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Desserts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sauces</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Boissons</a>
+                        </li>
+                    </ul>                   
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="far fa-user-circle fa-2x"></i></a>
+                        </li> 
+                        {% if app.user %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="far fa-sign-out-alt fa-2x"></i></a>
+                        </li> 
+                        {% endif %}
+                    </ul>
+                </div>
+            </nav>
+                    <form class="form-inline justify-content-center">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Tapez votre recherche ici" aria-label="Search">
+                        <button class="btn btn-outline my-2 my-sm-0" type="submit">Rechercher</button>
+                    </form>
+                    
+        </header>
         {% block body %}{% endblock %}
+        <footer class="footer">
+            <div class="footer-copyright text-center py-3 bg-light">© 2020 Copyright:
+                <a> Alexandre Szumiel</a>
+            </div>
+        </footer>
         {% block javascripts %}{% endblock %}
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </body>
 </html>
