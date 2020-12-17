@@ -11,6 +11,10 @@
 <div class="example-wrapper">
     <h1>Hello {{ controller_name }}! ✅</h1>
 
+    {% for flashSucces in app.flashes('verify_email_succes') %}
+        <div class="alert alert-succes" role="alert">{{ flashSucces }}</div>
+    {% endfor %}
+
     This friendly message is coming from:
     <ul>
         <li>Your controller at <code><a href="{{ 'C:/wamp64/www/projet8/src/Controller/MainController.php'|file_link(0) }}">src/Controller/MainController.php</a></code></li>
